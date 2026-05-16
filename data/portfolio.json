@@ -1,0 +1,104 @@
+{
+  "profile": {
+    "name": "David William",
+    "role": "Full Stack Developer",
+    "headline": "I build polished web, mobile, and automation products with AI, cloud-ready backends, and clean user experiences.",
+    "location": "India",
+    "email": "hello@example.com",
+    "about": "Full stack developer focused on production-ready platforms across Next.js, React Native, Spring Boot, TypeScript, automation, and AI-assisted workflows. I like building systems that feel clean on the surface and reliable underneath."
+  },
+  "skills": [
+    { "id": "nextjs", "name": "Next.js", "icon": "N" },
+    { "id": "typescript", "name": "TypeScript", "icon": "TS" },
+    { "id": "react", "name": "React", "icon": "R" },
+    { "id": "react-native", "name": "React Native", "icon": "RN" },
+    { "id": "spring", "name": "Spring Boot", "icon": "SB" },
+    { "id": "graphql", "name": "GraphQL", "icon": "GQL" },
+    { "id": "docker", "name": "Docker", "icon": "D" },
+    { "id": "ai-ml", "name": "AI / ML", "icon": "AI" },
+    { "id": "tailwind", "name": "Tailwind", "icon": "TW" },
+    { "id": "postgres", "name": "Postgres", "icon": "PG" }
+  ],
+  "socials": [
+    { "id": "github", "label": "GitHub", "url": "https://github.com/david-william62" },
+    { "id": "linkedin", "label": "LinkedIn", "url": "" },
+    { "id": "email", "label": "Email", "url": "mailto:hello@example.com" }
+  ],
+  "projects": [
+    {
+      "id": "ai-internship-recommender",
+      "title": "AI Basedd Internship recommender",
+      "summary": "AI-powered skill matching platform for students and recruiters.",
+      "highlights": [
+        "Built an AI-powered skill matching platform for students and recruiters.",
+        "Developed backend APIs for resume processing, recommendations, authentication, and analytics.",
+        "Integrated machine learning models to score skills against job requirements and taxonomy data.",
+        "Created responsive frontend dashboards for managing profiles, resumes, quizzes, and recommendations.",
+        "Automated training data processing and model fine-tuning for improved matching accuracy."
+      ],
+      "github": "https://github.com/david-william62/AI-Internship-Recommender",
+      "githubBackend": "",
+      "live": "",
+      "tags": ["AI", "ML", "Backend APIs", "Dashboards"]
+    },
+    {
+      "id": "realmbot",
+      "title": "Realmbot",
+      "summary": "Microservice-based Discord and web automation platform for realm workflows.",
+      "highlights": [
+        "Architected microservices for bot, API, verification, and web modules.",
+        "Built TypeScript backend with handlers, routes, services, and utilities.",
+        "Implemented Discord bot workflows for realm automation.",
+        "Integrated Xbox Live OAuth and NextAuth authentication pipelines.",
+        "Developed Next.js App Router frontend with server-side rendering.",
+        "Engineered modular UI components with Tailwind and Framer Motion.",
+        "Added token validation, rate limiting, and secure session handling.",
+        "Containerized services using Docker for consistent deployment.",
+        "Structured shared packages for linting, logging, and configuration.",
+        "Optimized real-time verification flows with robust error states."
+      ],
+      "github": "",
+      "githubBackend": "",
+      "live": "https://realmbot.dev",
+      "tags": ["Next.js", "TypeScript", "Discord", "Docker"]
+    },
+    {
+      "id": "realmcenter",
+      "title": "Realmcenter",
+      "summary": "Next.js marketplace for Minecraft Bedrock Realm listings.",
+      "highlights": [
+        "Built a Next.js marketplace for Minecraft Bedrock Realm listings.",
+        "Implemented authentication, email verification, and password reset flows.",
+        "Added Xbox linking for realm ownership verification.",
+        "Developed vote workflows with ad-gated progression and limits.",
+        "Created admin moderation tools for listings and approvals.",
+        "Designed reusable public, profile, and legal page components."
+      ],
+      "github": "",
+      "githubBackend": "",
+      "live": "https://realmcenter.org",
+      "tags": ["Next.js", "Marketplace", "Auth", "Moderation"]
+    },
+    {
+      "id": "college-event-management-app",
+      "title": "College Event Management app",
+      "summary": "Cross-platform college event management system with approvals and analytics.",
+      "highlights": [
+        "Built a cross-platform college event management system for event creation, registration, and approvals.",
+        "Developed the frontend in Expo React Native for Android, iOS, and web deployment.",
+        "Implemented role-based navigation and dashboards for admin, management, faculty, and student users.",
+        "Added secure JWT authentication with session persistence using secure token storage.",
+        "Created Spring Boot REST and GraphQL APIs for users, colleges, organisations, events, and analytics.",
+        "Designed relational modules for colleges, departments, memberships, events, and registrations.",
+        "Built multi-level approval workflows for event and user verification across institutional roles.",
+        "Enabled full event lifecycle management: create, update, delete, approve, reject, and register.",
+        "Developed admin tools for college setup, department management, and management-user onboarding.",
+        "Used Apollo Client, NativeWind, and React Native Paper for responsive UI and efficient data handling."
+      ],
+      "github": "https://github.com/david-william62/event-management",
+      "githubBackend": "https://github.com/david-william62/event-management",
+      "live": "",
+      "tags": ["Expo", "Spring Boot", "GraphQL", "JWT"]
+    }
+  ]
+}
