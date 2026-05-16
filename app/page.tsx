@@ -41,7 +41,6 @@ export default async function Home() {
         <div className="nav-links">
           <a href="#projects">Projects</a>
           <a href="#skills">Skills</a>
-          <Link href="/admin">Admin</Link>
         </div>
       </nav>
 
@@ -124,7 +123,7 @@ export default async function Home() {
             <p className="eyebrow" id="projects">
               Projects
             </p>
-            <Link href="/admin">Manage</Link>
+            <span>Selected work</span>
           </div>
           <div className="project-grid">
             {featuredProjects.map((project, index) => (

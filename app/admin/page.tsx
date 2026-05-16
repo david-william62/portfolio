@@ -2,6 +2,7 @@
 
 import Link from "next/link";
 import { useEffect, useMemo, useState } from "react";
+import type { FormEvent } from "react";
 import type { PortfolioData, Project, Skill, Social } from "@/lib/portfolio";
 
 const emptySkill: Skill = { id: "", name: "", icon: "" };
@@ -47,18 +48,52 @@ function csvToList(value: string) {
 
 export default function AdminPage() {
   const [data, setData] = useState<PortfolioData | null>(null);
-  const [status, setStatus] = useState("Loading portfolio data...");
+  const [status, setStatus] = useState("Checking admin session...");
   const [activeTab, setActiveTab] = useState<"profile" | "projects" | "skills" | "socials">("projects");
   const [saving, setSaving] = useState(false);
+  const [authenticated, setAuthenticated] = useState(false);
+  const [checkingAuth, setCheckingAuth] = useState(true);
+  const [password, setPassword] = useState("");
+  const [authError, setAuthError] = useState("");
 
-  useEffect(() => {
+  function loadPortfolio() {
+    setStatus("Loading portfolio data...");
     fetch("/api/portfolio", { cache: "no-store" })
-      .then((response) => response.json())
+      .then((response) => {
+        if (!response.ok) {
+          throw new Error("Unauthorized");
+        }
+
+        return response.json();
+      })
       .then((portfolio: PortfolioData) => {
         setData(portfolio);
         setStatus("Changes are saved to data/portfolio.json.");
       })
-      .catch(() => setStatus("Could not load portfolio data."));
+      .catch(() => {
+        setData(null);
+        setAuthenticated(false);
+        setStatus("Enter the admin password to manage portfolio content.");
+      });
+  }
+
+  useEffect(() => {
+    fetch("/api/admin-auth", { cache: "no-store" })
+      .then((response) => response.json())
+      .then((session: { authenticated: boolean }) => {
+        setAuthenticated(session.authenticated);
+        setCheckingAuth(false);
+
+        if (session.authenticated) {
+          loadPortfolio();
+        } else {
+          setStatus("Enter the admin password to manage portfolio content.");
+        }
+      })
+      .catch(() => {
+        setCheckingAuth(false);
+        setStatus("Enter the admin password to manage portfolio content.");
+      });
   }, []);
 
   const counts = useMemo(
@@ -85,6 +120,38 @@ export default function AdminPage() {
     setStatus(response.ok ? "Saved. Refresh the portfolio page to see updates." : "Save failed.");
   }
 
+  async function login(event: FormEvent<HTMLFormElement>) {
+    event.preventDefault();
+    setSaving(true);
+    setAuthError("");
+    setStatus("Checking password...");
+
+    const response = await fetch("/api/admin-auth", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ password })
+    });
+
+    setSaving(false);
+
+    if (!response.ok) {
+      setAuthError("Password rejected.");
+      setStatus("Enter the admin password to manage portfolio content.");
+      return;
+    }
+
+    setPassword("");
+    setAuthenticated(true);
+    loadPortfolio();
+  }
+
+  async function logout() {
+    await fetch("/api/admin-auth", { method: "DELETE" });
+    setData(null);
+    setAuthenticated(false);
+    setStatus("Enter the admin password to manage portfolio content.");
+  }
+
   function updateProject(index: number, project: Project) {
     if (!data) return;
     const projects = data.projects.map((item, itemIndex) => (itemIndex === index ? project : item));
@@ -101,6 +168,39 @@ export default function AdminPage() {
     if (!data) return;
     const socials = data.socials.map((item, itemIndex) => (itemIndex === index ? social : item));
     setData({ ...data, socials });
+  }
+
+  if (checkingAuth) {
+    return (
+      <main className="admin-shell">
+        <div className="admin-loading">{status}</div>
+      </main>
+    );
+  }
+
+  if (!authenticated) {
+    return (
+      <main className="admin-shell admin-lock-shell">
+        <form className="admin-login-card" onSubmit={login}>
+          <p className="eyebrow">Restricted</p>
+          <h1>Admin access</h1>
+          <p>{status}</p>
+          <label>
+            Password
+            <input
+              autoComplete="current-password"
+              autoFocus
+              type="password"
+              value={password}
+              onChange={(event) => setPassword(event.target.value)}
+            />
+          </label>
+          {authError ? <p className="auth-error">{authError}</p> : null}
+          <button disabled={saving || !password}>{saving ? "Checking" : "Unlock admin"}</button>
+          <Link href="/">Return to site</Link>
+        </form>
+      </main>
+    );
   }
 
   if (!data) {
@@ -121,6 +221,7 @@ export default function AdminPage() {
         </div>
         <div className="admin-actions">
           <Link href="/">View site</Link>
+          <button onClick={logout}>Log out</button>
           <button onClick={save} disabled={saving}>
             {saving ? "Saving" : "Save changes"}
           </button>
