@@ -18,16 +18,6 @@ const emptyProject: Project = {
   tags: []
 };
 
-function slugify(value: string) {
-  return (
-    value
-      .toLowerCase()
-      .trim()
-      .replace(/[^a-z0-9]+/g, "-")
-      .replace(/^-+|-+$/g, "") || crypto.randomUUID()
-  );
-}
-
 function listToText(list: string[]) {
   return list.join("\n");
 }
@@ -299,7 +289,7 @@ export default function AdminPage() {
                 <div className="form-grid">
                   <label>
                     Title
-                    <input value={project.title} onChange={(event) => updateProject(index, { ...project, title: event.target.value, id: slugify(event.target.value) })} />
+                    <input value={project.title} onChange={(event) => updateProject(index, { ...project, title: event.target.value })} />
                   </label>
                   <label>
                     Live link
@@ -344,7 +334,7 @@ export default function AdminPage() {
             {data.skills.map((skill, index) => (
               <div className="compact-row" key={skill.id}>
                 <input value={skill.icon} aria-label="Skill icon" onChange={(event) => updateSkill(index, { ...skill, icon: event.target.value })} />
-                <input value={skill.name} aria-label="Skill name" onChange={(event) => updateSkill(index, { ...skill, name: event.target.value, id: slugify(event.target.value) })} />
+                <input value={skill.name} aria-label="Skill name" onChange={(event) => updateSkill(index, { ...skill, name: event.target.value })} />
                 <button onClick={() => setData({ ...data, skills: data.skills.filter((_, itemIndex) => itemIndex !== index) })}>Remove</button>
               </div>
             ))}
@@ -363,7 +353,7 @@ export default function AdminPage() {
           <div className="compact-list">
             {data.socials.map((social, index) => (
               <div className="compact-row social-row" key={social.id}>
-                <input value={social.label} aria-label="Social label" onChange={(event) => updateSocial(index, { ...social, label: event.target.value, id: slugify(event.target.value) })} />
+                <input value={social.label} aria-label="Social label" onChange={(event) => updateSocial(index, { ...social, label: event.target.value })} />
                 <input value={social.url} aria-label="Social URL" onChange={(event) => updateSocial(index, { ...social, url: event.target.value })} />
                 <button onClick={() => setData({ ...data, socials: data.socials.filter((_, itemIndex) => itemIndex !== index) })}>Remove</button>
               </div>

@@ -8,21 +8,73 @@
     "about": "Full stack developer focused on production-ready platforms across Next.js, React Native, Spring Boot, TypeScript, automation, and AI-assisted workflows. I like building systems that feel clean on the surface and reliable underneath."
   },
   "skills": [
-    { "id": "nextjs", "name": "Next.js", "icon": "N" },
-    { "id": "typescript", "name": "TypeScript", "icon": "TS" },
-    { "id": "react", "name": "React", "icon": "R" },
-    { "id": "react-native", "name": "React Native", "icon": "RN" },
-    { "id": "spring", "name": "Spring Boot", "icon": "SB" },
-    { "id": "graphql", "name": "GraphQL", "icon": "GQL" },
-    { "id": "docker", "name": "Docker", "icon": "D" },
-    { "id": "ai-ml", "name": "AI / ML", "icon": "AI" },
-    { "id": "tailwind", "name": "Tailwind", "icon": "TW" },
-    { "id": "postgres", "name": "Postgres", "icon": "PG" }
+    {
+      "id": "c290e246-dd0f-4113-b949-f534bc0c6395",
+      "name": "MongoDB",
+      "icon": "MO"
+    },
+    {
+      "id": "j",
+      "name": "Java",
+      "icon": "JA"
+    },
+    {
+      "id": "nextjs",
+      "name": "Next.js",
+      "icon": "N"
+    },
+    {
+      "id": "typescript",
+      "name": "TypeScript",
+      "icon": "TS"
+    },
+    {
+      "id": "react",
+      "name": "React",
+      "icon": "R"
+    },
+    {
+      "id": "react-native",
+      "name": "React Native",
+      "icon": "RN"
+    },
+    {
+      "id": "docker",
+      "name": "Docker",
+      "icon": "D"
+    },
+    {
+      "id": "ai-ml",
+      "name": "AI / ML",
+      "icon": "AI"
+    },
+    {
+      "id": "tailwind",
+      "name": "Tailwind",
+      "icon": "TW"
+    },
+    {
+      "id": "sql",
+      "name": "SQL",
+      "icon": "SQ"
+    }
   ],
   "socials": [
-    { "id": "github", "label": "GitHub", "url": "https://github.com/david-william62" },
-    { "id": "linkedin", "label": "LinkedIn", "url": "" },
-    { "id": "email", "label": "Email", "url": "mailto:hello@example.com" }
+    {
+      "id": "github",
+      "label": "GitHub",
+      "url": "https://github.com/david-william62"
+    },
+    {
+      "id": "linkedin",
+      "label": "LinkedIn",
+      "url": ""
+    },
+    {
+      "id": "email",
+      "label": "Email",
+      "url": "sealeopard@realmbot.dev"
+    }
   ],
   "projects": [
     {
@@ -39,7 +91,12 @@
       "github": "https://github.com/david-william62/AI-Internship-Recommender",
       "githubBackend": "",
       "live": "",
-      "tags": ["AI", "ML", "Backend APIs", "Dashboards"]
+      "tags": [
+        "AI",
+        "ML",
+        "Backend APIs",
+        "Dashboards"
+      ]
     },
     {
       "id": "realmbot",
@@ -60,7 +117,12 @@
       "github": "",
       "githubBackend": "",
       "live": "https://realmbot.dev",
-      "tags": ["Next.js", "TypeScript", "Discord", "Docker"]
+      "tags": [
+        "Next.js",
+        "TypeScript",
+        "Discord",
+        "Docker"
+      ]
     },
     {
       "id": "realmcenter",
@@ -77,7 +139,12 @@
       "github": "",
       "githubBackend": "",
       "live": "https://realmcenter.org",
-      "tags": ["Next.js", "Marketplace", "Auth", "Moderation"]
+      "tags": [
+        "Next.js",
+        "Marketplace",
+        "Auth",
+        "Moderation"
+      ]
     },
     {
       "id": "college-event-management-app",
@@ -98,7 +165,12 @@
       "github": "https://github.com/david-william62/event-management",
       "githubBackend": "https://github.com/david-william62/event-management",
       "live": "",
-      "tags": ["Expo", "Spring Boot", "GraphQL", "JWT"]
+      "tags": [
+        "Expo",
+        "Spring Boot",
+        "GraphQL",
+        "JWT"
+      ]
     }
   ]
 }
