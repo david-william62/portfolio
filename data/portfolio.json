@@ -4,7 +4,7 @@
     "role": "Full Stack Developer",
     "headline": "I build polished web, mobile, and automation products with AI, cloud-ready backends, and clean user experiences.",
     "location": "India",
-    "email": "hello@example.com",
+    "email": "davidwilliam35302@gmail.com",
     "about": "Full stack developer focused on production-ready platforms across Next.js, React Native, Spring Boot, TypeScript, automation, and AI-assisted workflows. I like building systems that feel clean on the surface and reliable underneath."
   },
   "skills": [
@@ -91,12 +91,7 @@
       "github": "https://github.com/david-william62/AI-Internship-Recommender",
       "githubBackend": "",
       "live": "",
-      "tags": [
-        "AI",
-        "ML",
-        "Backend APIs",
-        "Dashboards"
-      ]
+      "tags": ["AI", "ML", "Backend APIs", "Dashboards"]
     },
     {
       "id": "realmbot",
@@ -117,12 +112,7 @@
       "github": "",
       "githubBackend": "",
       "live": "https://realmbot.dev",
-      "tags": [
-        "Next.js",
-        "TypeScript",
-        "Discord",
-        "Docker"
-      ]
+      "tags": ["Next.js", "TypeScript", "Discord", "Docker"]
     },
     {
       "id": "realmcenter",
@@ -139,12 +129,7 @@
       "github": "",
       "githubBackend": "",
       "live": "https://realmcenter.org",
-      "tags": [
-        "Next.js",
-        "Marketplace",
-        "Auth",
-        "Moderation"
-      ]
+      "tags": ["Next.js", "Marketplace", "Auth", "Moderation"]
     },
     {
       "id": "college-event-management-app",
@@ -165,12 +150,7 @@
       "github": "https://github.com/david-william62/event-management",
       "githubBackend": "https://github.com/david-william62/event-management",
       "live": "",
-      "tags": [
-        "Expo",
-        "Spring Boot",
-        "GraphQL",
-        "JWT"
-      ]
+      "tags": ["Expo", "Spring Boot", "GraphQL", "JWT"]
     }
   ]
 }
