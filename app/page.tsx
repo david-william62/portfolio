@@ -53,7 +53,7 @@ export default async function Home() {
             <p className="hero-copy">{data.profile.headline}</p>
           </div>
           <div className="hero-status" aria-label="Portfolio highlights">
-            <span>AI products</span>
+            <span>AI integrations</span>
             <span>Cloud backends</span>
             <span>Mobile systems</span>
           </div>

@@ -2,10 +2,10 @@
   "profile": {
     "name": "David William",
     "role": "Full Stack Developer",
-    "headline": "I build polished web, mobile, and automation products with AI, cloud-ready backends, and clean user experiences.",
+    "headline": "I build polished web, mobile, and automation products with practical AI integrations, cloud-ready backends, and clean user experiences.",
     "location": "India",
     "email": "davidwilliam35302@gmail.com",
-    "about": "Full stack developer focused on production-ready platforms across Next.js, React Native, Spring Boot, TypeScript, automation, and AI-assisted workflows. I like building systems that feel clean on the surface and reliable underneath."
+    "about": "Full stack developer focused on production-ready platforms across Next.js, React Native, Spring Boot, TypeScript, and automation. I use AI as a coding assistant and integration tool where it adds value, while keeping the architecture, implementation, and quality decisions grounded in solid engineering."
   },
   "skills": [
     {
