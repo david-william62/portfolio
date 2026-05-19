@@ -2,10 +2,10 @@
   "profile": {
     "name": "David William",
     "role": "Full Stack Developer",
-    "headline": "I build polished web, mobile, and automation products with practical AI integrations, cloud-ready backends, and clean user experiences.",
+    "headline": "I build polished web, mobile, and automation products with cloud-ready backends and clean user experiences.",
     "location": "India",
     "email": "davidwilliam35302@gmail.com",
-    "about": "Full stack developer focused on production-ready platforms across Next.js, React Native, Spring Boot, TypeScript, and automation. I use AI as a coding assistant and integration tool where it adds value, while keeping the architecture, implementation, and quality decisions grounded in solid engineering."
+    "about": "Full stack developer focused on production-ready platforms across Next.js, React Native, Spring Boot, TypeScript, and automation. I care about practical architecture, maintainable implementation, and clean product experiences."
   },
   "skills": [
     {
@@ -44,9 +44,9 @@
       "icon": "D"
     },
     {
-      "id": "ai-ml",
-      "name": "AI / ML",
-      "icon": "AI"
+      "id": "automation",
+      "name": "Automation",
+      "icon": "AU"
     },
     {
       "id": "tailwind",
@@ -66,8 +66,9 @@
       "url": "https://github.com/david-william62"
     },
     {
-      "id": "github"
-      "label": "Github {Online}"
+      "id": "github-online",
+      "label": "GitHub {Online}",
+      "url": "https://github.com/SeaLeopard35302"
     },
     {
       "id": "linkedin",
@@ -82,20 +83,20 @@
   ],
   "projects": [
     {
-      "id": "ai-internship-recommender",
-      "title": "AI Basedd Internship recommender",
-      "summary": "AI-powered skill matching platform for students and recruiters.",
+      "id": "internship-recommender",
+      "title": "Internship Recommender",
+      "summary": "Skill matching platform for students and recruiters.",
       "highlights": [
-        "Built an AI-powered skill matching platform for students and recruiters.",
+        "Built a skill matching platform for students and recruiters.",
         "Developed backend APIs for resume processing, recommendations, authentication, and analytics.",
-        "Integrated machine learning models to score skills against job requirements and taxonomy data.",
+        "Integrated scoring models to match skills against job requirements and taxonomy data.",
         "Created responsive frontend dashboards for managing profiles, resumes, quizzes, and recommendations.",
-        "Automated training data processing and model fine-tuning for improved matching accuracy."
+        "Automated data processing workflows for improved matching accuracy."
       ],
       "github": "https://github.com/david-william62/AI-Internship-Recommender",
       "githubBackend": "",
       "live": "",
-      "tags": ["AI", "ML", "Backend APIs", "Dashboards"]
+      "tags": ["Matching", "Automation", "Backend APIs", "Dashboards"]
     },
     {
       "id": "realmbot",

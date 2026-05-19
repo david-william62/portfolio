@@ -51,34 +51,28 @@ export default async function Home() {
             <p className="eyebrow">{data.profile.role}</p>
             <h1>{data.profile.name}</h1>
             <p className="hero-copy">{data.profile.headline}</p>
+            <p className="hero-about">{data.profile.about}</p>
+            <div className="meta-row hero-meta">
+              <span>{data.profile.location}</span>
+              <span>{data.profile.email}</span>
+            </div>
           </div>
           <div className="hero-status" aria-label="Portfolio highlights">
-            <span>AI integrations</span>
+            <span>Product engineering</span>
             <span>Cloud backends</span>
             <span>Mobile systems</span>
           </div>
-          <div className="hero-actions">
-            {data.socials
-              .filter((social) => social.url)
-              .slice(0, 2)
-              .map((social) => (
-                <a key={social.id} className="primary-link" href={social.url}>
-                  {social.label}
-                  <ArrowIcon />
-                </a>
-              ))}
-          </div>
         </BentoCard>
 
-        <BentoCard className="about-card" delay={120}>
-          <div className="card-kicker">
-            <p className="eyebrow">About</p>
-            <span>01</span>
-          </div>
-          <p>{data.profile.about}</p>
-          <div className="meta-row">
-            <span>{data.profile.location}</span>
-            <span>{data.profile.email}</span>
+        <BentoCard className="social-card" delay={120}>
+          <p className="eyebrow">Socials</p>
+          <div className="social-list">
+            {data.socials.map((social) => (
+              <a key={social.id} href={social.url || "#"} aria-disabled={!social.url}>
+                <span>{social.label}</span>
+                <ArrowIcon />
+              </a>
+            ))}
           </div>
         </BentoCard>
 
@@ -103,18 +97,6 @@ export default async function Home() {
                 </div>
               ))}
             </div>
-          </div>
-        </BentoCard>
-
-        <BentoCard className="social-card" delay={360}>
-          <p className="eyebrow">Socials</p>
-          <div className="social-list">
-            {data.socials.map((social) => (
-              <a key={social.id} href={social.url || "#"} aria-disabled={!social.url}>
-                <span>{social.label}</span>
-                <ArrowIcon />
-              </a>
-            ))}
           </div>
         </BentoCard>
 

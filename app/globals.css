@@ -243,13 +243,6 @@ svg {
   }
 }
 
-.about-card {
-  grid-column: span 5;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-}
-
 .stat-card {
   grid-column: span 3;
   background:
@@ -263,11 +256,20 @@ svg {
 }
 
 .skills-card {
-  grid-column: span 5;
+  grid-column: span 9;
 }
 
 .social-card {
-  grid-column: span 4;
+  grid-column: span 5;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  gap: 18px;
+  background:
+    linear-gradient(90deg, rgba(215, 255, 55, 0.14) 0 1px, transparent 1px),
+    linear-gradient(rgba(215, 255, 55, 0.1) 0 1px, transparent 1px),
+    linear-gradient(145deg, #151b25 0%, #090c12 62%, #15080e 100%);
+  background-size: 24px 24px, 24px 24px, auto;
 }
 
 .projects-card {
@@ -317,6 +319,16 @@ h1 {
   color: rgba(244, 247, 251, 0.74);
   font-size: clamp(1.04rem, 2vw, 1.35rem);
   line-height: 1.55;
+}
+
+.hero-about {
+  position: relative;
+  z-index: 1;
+  max-width: 720px;
+  margin: 18px 0 0;
+  color: rgba(244, 247, 251, 0.86);
+  font-size: 1rem;
+  line-height: 1.65;
 }
 
 .hero-status {
@@ -373,18 +385,10 @@ h1 {
   transform: translate(3px, 3px);
 }
 
-.about-card .eyebrow,
 .skills-card .eyebrow,
 .social-card .eyebrow,
 .projects-card .eyebrow {
   color: var(--accent-3);
-}
-
-.about-card p:not(.eyebrow) {
-  margin: 0;
-  color: rgba(244, 247, 251, 0.88);
-  font-size: 1.08rem;
-  line-height: 1.7;
 }
 
 .meta-row {
@@ -397,6 +401,13 @@ h1 {
 .meta-row span {
   border-left: 3px solid var(--accent);
   padding-left: 10px;
+}
+
+.hero-meta {
+  position: relative;
+  z-index: 1;
+  justify-content: flex-start;
+  margin-top: 18px;
 }
 
 .stat-number {
@@ -480,7 +491,7 @@ h1 {
 
 .social-list {
   display: grid;
-  gap: 10px;
+  gap: 14px;
 }
 
 .social-list a {
@@ -488,22 +499,22 @@ h1 {
   align-items: center;
   justify-content: space-between;
   min-height: 56px;
-  border: 1px solid var(--line);
+  border: 1px solid transparent;
   border-radius: 6px;
-  padding: 0 15px;
-  background: rgba(255, 255, 255, 0.035);
-  color: var(--ink);
+  padding: 0 14px;
+  background: var(--accent);
+  color: var(--accent-ink);
+  box-shadow: 5px 5px 0 rgba(255, 53, 93, 0.72);
   font-weight: 950;
+  text-transform: uppercase;
   transition:
-    background 180ms ease,
-    border-color 180ms ease,
-    color 180ms ease;
+    box-shadow 180ms ease,
+    transform 180ms ease;
 }
 
 .social-list a:hover {
-  border-color: var(--line-strong);
-  background: var(--accent);
-  color: var(--accent-ink);
+  box-shadow: 2px 2px 0 rgba(255, 53, 93, 0.9);
+  transform: translate(3px, 3px);
 }
 
 .social-list a[aria-disabled="true"] {
@@ -879,7 +890,6 @@ textarea:focus {
 
 @media (max-width: 900px) {
   .hero-card,
-  .about-card,
   .stat-card,
   .skills-card,
   .social-card,
