@@ -1,5 +1,5 @@
-import Link from "next/link";
 import { getPortfolio } from "@/lib/portfolio";
+import ScrollAwareNav from "./ScrollAwareNav";
 
 export const dynamic = "force-dynamic";
 
@@ -27,6 +27,15 @@ function BentoCard({
   );
 }
 
+function getSocialHref(social: { id: string; url: string }, fallbackEmail: string) {
+  if (social.id === "email") {
+    const recipient = social.url.trim() || fallbackEmail;
+    return recipient ? `https://mail.google.com/mail/?view=cm&fs=1&to=${encodeURIComponent(recipient)}` : "#";
+  }
+
+  return social.url || "#";
+}
+
 export default async function Home() {
   const data = await getPortfolio();
   const marqueeSkills = [...data.skills, ...data.skills];
@@ -34,15 +43,7 @@ export default async function Home() {
 
   return (
     <main className="site-shell">
-      <nav className="top-nav" aria-label="Primary navigation">
-        <Link href="/" className="brand-mark">
-          DW
-        </Link>
-        <div className="nav-links">
-          <a href="#projects">Projects</a>
-          <a href="#skills">Skills</a>
-        </div>
-      </nav>
+      <ScrollAwareNav />
 
       <div className="bento-grid">
         <BentoCard className="hero-card" delay={40}>
@@ -67,12 +68,16 @@ export default async function Home() {
         <BentoCard className="social-card" delay={120}>
           <p className="eyebrow">Socials</p>
           <div className="social-list">
-            {data.socials.map((social) => (
-              <a key={social.id} href={social.url || "#"} aria-disabled={!social.url}>
-                <span>{social.label}</span>
-                <ArrowIcon />
-              </a>
-            ))}
+            {data.socials.map((social) => {
+              const href = getSocialHref(social, data.profile.email);
+
+              return (
+                <a key={social.id} href={href} aria-disabled={href === "#"} target="_blank" rel="noreferrer">
+                  <span>{social.label}</span>
+                  <ArrowIcon />
+                </a>
+              );
+            })}
           </div>
         </BentoCard>
 
@@ -127,19 +132,19 @@ export default async function Home() {
                 </ul>
                 <div className="project-actions">
                   {project.live ? (
-                    <a href={project.live}>
+                    <a href={project.live} target="_blank">
                       Live
                       <ArrowIcon />
                     </a>
                   ) : null}
                   {project.github ? (
-                    <a href={project.github}>
+                    <a href={project.github} target="_blank">
                       GitHub
                       <ArrowIcon />
                     </a>
                   ) : null}
                   {project.githubBackend ? (
-                    <a href={project.githubBackend}>
+                    <a href={project.githubBackend} target="_blank">
                       Backend
                       <ArrowIcon />
                     </a>
