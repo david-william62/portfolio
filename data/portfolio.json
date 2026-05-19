@@ -62,8 +62,12 @@
   "socials": [
     {
       "id": "github",
-      "label": "GitHub",
+      "label": "GitHub {Personal}",
       "url": "https://github.com/david-william62"
+    },
+    {
+      "id": "github"
+      "label": "Github {Online}"
     },
     {
       "id": "linkedin",
